@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <!--<TableLayout></TableLayout>-->
+    <!--<TextView-->
+        <!--android:id="@+id/textView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="工程名称(子项):"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.051"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.054" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editText"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:hint="请输入工程名称或子项名称"-->
+        <!--android:text=""-->
+        <!--android:textSize="12dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/textView"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/textView"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/textView" />-->
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        <RelativeLayout android:id="@+id/relativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+             <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+        <TableRow>
+            <TextView
+                android:id="@+id/textViewName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工程名称/子项:"
+                android:textAlignment="textEnd"/>
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="请输入工程名称/子项">
+                <requestFocus />  
+            </EditText> 
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/textViewName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="施工承包商:"
+                android:textAlignment="textEnd"/>
+            <EditText
+                android:id="@+id/editTextName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="请输承包商名称">
+            </EditText>
+        </TableRow>
+         <TableRow android:padding="10dp">
+             <TextView
+                 android:id="@+id/textViewName3"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="旁站计时:"
+                 android:textAlignment="textEnd"/>
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="horizontal">
+
+                 <Button
+                     android:id="@+id/buttonStart0"
+                     android:layout_width="wrap_content"
+                     android:layout_height="60dp"
+                     android:text="开始"></Button>
+                  
+                 <TextView
+                     android:id="@+id/textViewCal"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="00:00:00"
+                     android:textAlignment="textEnd"/>
+
+                 <Button
+                     android:id="@+id/buttonEnd"
+                     android:layout_width="wrap_content"
+                     android:layout_height="60dp"
+                     android:text="结束"></Button>
+             </LinearLayout> 
+         </TableRow >
+         </TableLayout>
+        </RelativeLayout>
+            <HorizontalScrollView
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <RelativeLayout android:id="@+id/relativeLayout2"
+               android:layout_height="fill_parent"
+               android:layout_width="wrap_content"
+               android:layout_weight="1"
+               android:gravity="left"
+                android:layout_marginLeft="30dp"
+               >
+
+            <TextView
+                android:id="@+id/textViewCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="施工及监理情况:" />
+            <Button
+                android:id="@+id/buttonSaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="附件"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf = "@+id/textViewCondition"
+                ></Button>
+
+            <ImageButton
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonSaf"
+                android:layout_alignLeft="@+id/buttonSaf"
+                android:background="@null"
+                android:text="预览图片"></ImageButton>
+           </RelativeLayout>
+            </HorizontalScrollView>
+        <TableLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+        <TableRow>
+            <TextView
+                android:id="@+id/textViewDis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发现问题:"
+                android:textAlignment="textEnd"/>
+            <EditText
+                android:id="@+id/editTextQA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="请输入问题描述">
+            </EditText>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="处理意见及结果:"
+                android:textAlignment="textEnd"/>
+            <EditText
+                android:id="@+id/editTextResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="请输处理意见及结果">
+            </EditText>
+        </TableRow>
+        <TableRow>
+            <Button android:id="@+id/saveButton" android:text="生成EXCEL"/>
+        </TableRow>
+
+    </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
